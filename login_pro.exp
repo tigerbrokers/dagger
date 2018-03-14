@@ -1,0 +1,22 @@
+#!/usr/bin/expect -c
+
+set ssh_login [lindex $argv 0]
+set verify_code [lindex $argv 1]
+set password [lindex $argv 2]
+set timeout 60
+
+spawn ssh $ssh_login
+
+expect {
+    "Verification code:" {
+        send "$verify_code\r"
+        exp_continue
+    }
+    "assword:" {
+        send "$password\r"
+        exp_continue
+    }
+    "Last login" {}
+}
+interact
+
