@@ -1,6 +1,6 @@
 {
   "name": "@tigerbrokers/dagger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Automatic login switch server of Tigerbrokers",
   "bin": {
     "dagger": "./dagger.sh"
